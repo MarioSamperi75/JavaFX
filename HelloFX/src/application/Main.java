@@ -22,8 +22,12 @@ public class Main extends Application {
 		launch(args);
 	}
 
-	// we create a stage - we get already one as parameter
-	//  we create a root
+	// 	STEPS:
+	// 	create the stage - we get already one as parameter
+	//  create the root
+	//	create the scene with the root as parameter
+	// 	set the scene in the stage
+	// 	show the stage
 	@Override
 	public void start(Stage stage) throws Exception {
 		

@@ -10,21 +10,16 @@ import javafx.scene.Scene;
 // Creating scene with scene builder (Editor)
 // if you want to edit fxml file with Scene Builder
 // Right click on it - open with Scene Builder
-public class Main extends Application {
+public class ScenesApp extends Application {
 	@Override
-	public void start(Stage primaryStage) {
+	public void start(Stage stage) {
 		try {
 	
-			Parent root = FXMLLoader.load(getClass().getResource("Events.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("Scene1.fxml"));
 			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
 			
-			// connecting a scene to css file
-			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			String css =this.getClass().getResource("application.css").toExternalForm();
-			scene.getStylesheets().add(css);
-			
-			primaryStage.setScene(scene);
-			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

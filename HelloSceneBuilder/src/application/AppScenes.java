@@ -10,7 +10,7 @@ import javafx.scene.Scene;
 // Creating scene with scene builder (Editor)
 // if you want to edit fxml file with Scene Builder
 // Right click on it - open with Scene Builder
-public class ScenesApp extends Application {
+public class AppScenes extends Application {
 	@Override
 	public void start(Stage stage) {
 		try {

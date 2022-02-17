@@ -14,10 +14,15 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			// the root comes from our fxml file
-			Parent root = FXMLLoader.load(getClass().getResource("Events.fxml"));
+	
+			Parent root = FXMLLoader.load(getClass().getResource("css.fxml"));
 			Scene scene = new Scene(root);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			
+			// connecting a scene to css file
+			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			String css =this.getClass().getResource("application.css").toExternalForm();
+			scene.getStylesheets().add(css);
+			
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {

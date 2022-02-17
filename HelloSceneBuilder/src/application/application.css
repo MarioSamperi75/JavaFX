@@ -1,1 +1,21 @@
-/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.root{
+	-fx-background-color: "black";
+}
+
+
+/* to have a real center alignment 
+ * we extended the labels to the entire width
+ * in Scene Builder
+ */
+.label {
+	-fx-font-size: 20;
+	-fx-font-family: "Garamond";
+	-fx-text-fill: "White";
+	-fx-alignment: center;
+}
+
+#titleLabel {
+	
+	-fx-font-size: 60;
+	
+}

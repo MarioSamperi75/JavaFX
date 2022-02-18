@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller_switch_image">
+   <children>
+      <AnchorPane layoutX="-6.0" layoutY="-8.0" prefHeight="418.0" prefWidth="640.0">
+         <children>
+            <Button fx:id="myButton" layoutX="294.0" layoutY="341.0" mnemonicParsing="false" onAction="#displayImage" text="Button" />
+            <ImageView fx:id="myImageView" fitHeight="284.0" fitWidth="336.0" layoutX="152.0" layoutY="38.0" onMouseEntered="#displayImage" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/zebra.png" />
+               </image></ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -46,6 +46,9 @@ public class Controller_TreeView implements Initializable {
 		
 		rootItem.getChildren().addAll(brancheItem1, brancheItem2, brancheItem3);
 		
+		
+		//you can hide the root folder
+		//myTreeView.setShowRoot(false);
 		myTreeView.setRoot(rootItem);
 
 		

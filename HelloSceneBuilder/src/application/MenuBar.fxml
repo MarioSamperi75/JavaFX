@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="application.Controller_MenuBar">
+   <children>
+      <AnchorPane prefHeight="364.0" prefWidth="519.0">
+         <children>
+            <MenuBar layoutY="2.0" prefHeight="26.0" prefWidth="519.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#newMethod" text="New" />
+                        <CheckMenuItem mnemonicParsing="false" onAction="#notImplementedMethod" text="AutoSave" />
+                        <RadioMenuItem mnemonicParsing="false" onAction="#notImplementedMethod" text="Option1">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="option" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem mnemonicParsing="false" onAction="#notImplementedMethod" text="Option2" toggleGroup="$option" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem mnemonicParsing="false" onAction="#notImplementedMethod" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#notImplementedMethod" text="Delete" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="View">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#notImplementedMethod" text="Zoom" />
+                    </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#notImplementedMethod" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Label fx:id="myLabel" alignment="CENTER" layoutX="38.0" layoutY="149.0" prefHeight="34.0" prefWidth="436.0">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="114.0" layoutY="248.0" prefHeight="18.0" prefWidth="290.0" text="(Just &quot;new &quot; is implemented) " />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -48,7 +48,4 @@ public class Controller_ProgressBar implements Initializable{
 		myLabel.setText(Integer.toString((int)Math.round(progress.doubleValue()*100)) + "%");
 		}
 	}
-	
-	
-
 }

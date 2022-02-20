@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="479.0" prefWidth="436.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="application.Controller_TreeView">
+   <children>
+      <TreeView fx:id="myTreeView" layoutX="84.0" layoutY="43.0" onContextMenuRequested="#selectItem" onMouseClicked="#selectItem" prefHeight="283.0" prefWidth="267.0" />
+      <Label fx:id="myLabel" alignment="CENTER" layoutX="-2.0" layoutY="367.0" prefHeight="55.0" prefWidth="436.0" text="Select a file">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

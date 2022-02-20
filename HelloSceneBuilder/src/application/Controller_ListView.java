@@ -33,14 +33,6 @@ public class Controller_ListView implements Initializable {
 				myLabel.setText(currentWine);
 				
 			}
-			
-		});
-		
-		
+		});	
 	}
-
-
-	
-	
-
 }

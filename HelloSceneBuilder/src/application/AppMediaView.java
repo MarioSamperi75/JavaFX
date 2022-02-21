@@ -10,12 +10,12 @@ import javafx.scene.Scene;
 // Creating scene with scene builder (Editor)
 // if you want to edit fxml file with Scene Builder
 // Right click on it - open with Scene Builder
-public class AppColorPicker extends Application {
+public class AppMediaView extends Application {
 	@Override
 	public void start(Stage stage) {
 		try {
 	
-			Parent root = FXMLLoader.load(getClass().getResource("ColorPicker.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("MediaView.fxml"));
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();

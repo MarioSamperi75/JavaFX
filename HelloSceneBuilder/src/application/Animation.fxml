@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller_Animation">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="426.0" prefWidth="654.0">
+         <children>
+            <ImageView fx:id="myImageView" fitHeight="48.0" fitWidth="48.0" layoutX="303.0" layoutY="188.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/ball.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="261.0" layoutY="350.0" mnemonicParsing="false" onAction="#translateLeft" prefHeight="34.0" prefWidth="42.0" text="L" />
+            <Button layoutX="345.0" layoutY="350.0" mnemonicParsing="false" onAction="#translateRight" prefHeight="34.0" prefWidth="42.0" text="R" />
+            <Button layoutX="303.0" layoutY="384.0" mnemonicParsing="false" onAction="#translateDown" prefHeight="34.0" prefWidth="42.0" text="D" />
+            <Button layoutX="303.0" layoutY="315.0" mnemonicParsing="false" onAction="#translateUp" prefHeight="34.0" prefWidth="42.0" text="U" />
+            <Label layoutX="300.0" layoutY="290.0" text="Translate" />
+            <Button fx:id="rotateButton" layoutX="105.0" layoutY="315.0" mnemonicParsing="false" onAction="#rotate" prefHeight="18.0" prefWidth="54.0" text="Rotate" />
+            <Button fx:id="fadeButton" layoutX="514.0" layoutY="315.0" mnemonicParsing="false" onAction="#fade" prefHeight="26.0" prefWidth="54.0" text="Fade" />
+            <Button fx:id="scaleButton" layoutX="105.0" layoutY="377.0" mnemonicParsing="false" onAction="#scale" prefHeight="18.0" prefWidth="54.0" text="Scale" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -65,6 +65,22 @@ public class Controller_WebView implements Initializable {
 			System.out.println(entry.getUrl() + " " + entry.getLastVisitedDate());
 		}
 	}
+	
+	public void back () {
+		history = engine.getHistory();
+		ObservableList<WebHistory.Entry> entries = history.getEntries();
+		history.go(-1);
+		//to print the right url in the textField
+		myTextField.setText(entries.get(history.getCurrentIndex()).getUrl());
+	}
+	
+	public void forward () {
+		history = engine.getHistory();
+		ObservableList<WebHistory.Entry> entries = history.getEntries();
+		history.go(1);
+		//to print the right url in the textField
+		myTextField.setText(entries.get(history.getCurrentIndex()).getUrl());
+	}
 
 
 }

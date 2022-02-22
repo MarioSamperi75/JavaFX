@@ -17,6 +17,8 @@
             <Button layoutX="153.0" layoutY="47.0" mnemonicParsing="false" onAction="#zoomIn" text="+" />
             <Button layoutX="185.0" layoutY="47.0" mnemonicParsing="false" onAction="#zoomOut" prefHeight="26.0" prefWidth="25.0" text="-" />
             <Button layoutX="220.0" layoutY="47.0" mnemonicParsing="false" onAction="#displayHistory" prefHeight="20.0" prefWidth="62.0" text="history" />
+            <Button layoutX="290.0" layoutY="47.0" mnemonicParsing="false" onAction="#back" text="&lt;-" />
+            <Button layoutX="323.0" layoutY="47.0" mnemonicParsing="false" onAction="#forward" text="-&gt;" />
          </children>
       </AnchorPane>
    </children>

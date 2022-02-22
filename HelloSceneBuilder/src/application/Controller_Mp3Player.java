@@ -85,9 +85,9 @@ public class Controller_Mp3Player implements Initializable {
 	
 	public void pauseMedia() {
 		// to avoid a bug when resetting and starting
-		if(mediaPlayer.getStatus() != MediaPlayer.Status.READY) {
+	
 		mediaPlayer.pause();
-		}
+		
 	}
 	
 	public void resetMedia() {

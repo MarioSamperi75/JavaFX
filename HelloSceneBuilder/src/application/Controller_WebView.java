@@ -26,6 +26,7 @@ public class Controller_WebView implements Initializable {
 	
 	private String homePage; 
 	double webZoom;
+	String url;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -80,6 +81,15 @@ public class Controller_WebView implements Initializable {
 		history.go(1);
 		//to print the right url in the textField
 		myTextField.setText(entries.get(history.getCurrentIndex()).getUrl());
+	}
+	
+	public void executeJs () {
+		url = "http://www.youtube.com";
+		engine.executeScript("window.location = \"" + url + "\";");
+		myTextField.setText(url);
+		
+		
+		
 	}
 
 

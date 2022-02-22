@@ -10,9 +10,12 @@
    <children>
       <AnchorPane layoutY="1.0" prefHeight="644.0" prefWidth="906.0">
          <children>
-            <WebView fx:id="myWebView" layoutY="50.0" prefHeight="596.0" prefWidth="906.0" />
-            <TextField fx:id="myTextField" layoutX="14.0" layoutY="14.0" onAction="#loadPage" prefHeight="26.0" prefWidth="785.0" AnchorPane.bottomAnchor="606.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="107.0" AnchorPane.topAnchor="14.0" />
-            <Button layoutX="819.0" layoutY="14.0" mnemonicParsing="false" onAction="#loadPage" prefHeight="26.0" prefWidth="74.0" text="load" />
+            <WebView fx:id="myWebView" layoutY="79.0" prefHeight="603.0" prefWidth="906.0" />
+            <TextField fx:id="myTextField" layoutX="14.0" layoutY="14.0" onAction="#loadPage" prefHeight="26.0" prefWidth="878.0" AnchorPane.bottomAnchor="642.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
+            <Button layoutX="14.0" layoutY="47.0" mnemonicParsing="false" onAction="#loadPage" prefHeight="20.0" prefWidth="62.0" text="load" />
+            <Button layoutX="83.0" layoutY="47.0" mnemonicParsing="false" onAction="#refreshPage" prefHeight="26.0" prefWidth="61.0" text="refresh" />
+            <Button layoutX="153.0" layoutY="47.0" mnemonicParsing="false" onAction="#zoomIn" text="+" />
+            <Button layoutX="185.0" layoutY="47.0" mnemonicParsing="false" onAction="#zoomOut" prefHeight="26.0" prefWidth="25.0" text="-" />
          </children>
       </AnchorPane>
    </children>

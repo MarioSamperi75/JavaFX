@@ -23,11 +23,14 @@ public class Controller_WebView implements Initializable {
 	
 	private String homePage; 
 	
+	double webZoom;
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
 		engine = myWebView.getEngine();
 		homePage = "www.google.com";
+		webZoom = 1.0;
 		myTextField.setText(homePage);
 		loadPage();
 
@@ -35,6 +38,20 @@ public class Controller_WebView implements Initializable {
 
 	public void loadPage () {
 		engine.load("http://" + myTextField.getText());
+	}
+	
+	public void refreshPage () {
+		engine.reload();
+	}
+	
+	public void zoomIn () {
+		webZoom += 0.1;
+		myWebView.setZoom(webZoom);
+	}
+	
+	public void zoomOut () {
+		webZoom -= 0.1;
+		myWebView.setZoom(webZoom);
 	}
 
 

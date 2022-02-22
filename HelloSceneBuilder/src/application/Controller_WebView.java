@@ -21,10 +21,15 @@ public class Controller_WebView implements Initializable {
 	
 	private WebEngine engine;
 	
+	private String homePage; 
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
 		engine = myWebView.getEngine();
+		homePage = "www.google.com";
+		myTextField.setText(homePage);
+		loadPage();
 
 	}
 

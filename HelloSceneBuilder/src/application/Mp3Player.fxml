@@ -14,7 +14,7 @@
          <children>
             <Label fx:id="songLabel" alignment="CENTER" layoutX="9.0" layoutY="1.0" prefHeight="75.0" prefWidth="546.0" style="-fx-background-color: BLACK;" text="MP3 Player" textFill="#ebef00">
                <font>
-                  <Font size="50.0" />
+                  <Font size="36.0" />
                </font>
             </Label>
             <ProgressBar fx:id="songProgressBar" layoutX="12.0" layoutY="77.0" prefHeight="18.0" prefWidth="542.0" progress="0.0" />

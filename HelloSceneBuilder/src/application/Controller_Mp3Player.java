@@ -56,6 +56,8 @@ public class Controller_Mp3Player implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
 		songs = new ArrayList<File>();
+		// we get all the files from the directory
+		// and we fill an arraylist -songs- with all the files
 		
 		directory = new File("C:\\Users\\mario\\Javamapp\\12 Mario\\JavaFx\\HelloSceneBuilder\\src\\music");
 	
@@ -64,9 +66,15 @@ public class Controller_Mp3Player implements Initializable {
 		if (files != null) {
 			for(File file : files) {
 				songs.add(file);
-				System.out.println(file.getName());
 			}
 		}
+		
+		//creating media and MediaPlayer objects
+		media = new Media(songs.get(songNumber).toURI().toString());
+		mediaPlayer = new MediaPlayer(media); 
+		
+		//we set the name of the song in the songLabel
+		songLabel.setText(songs.get(songNumber).getName());
 		
 		
 	}

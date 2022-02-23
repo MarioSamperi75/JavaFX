@@ -103,16 +103,22 @@ public class Controller_Mp3Player implements Initializable {
 		// we must set the execution speed before playing anyway
 		// even if we doesn't click in the  speedBox -maybe is already 200%...
 		// so even if the event is null
+		
+		// we start the timer!
+		beginTimer();
 		changeSpeed(null);
 		mediaPlayer.play();
 	}
 	
 	public void pauseMedia() {
+		cancelTimer();
 		mediaPlayer.pause();
 		
 	}
 	
 	public void resetMedia() {
+		//when we reset, we have to reset the progressBar too
+		songProgressBar.setProgress(0);
 		mediaPlayer.seek(Duration.seconds(0.0));
 	}
 
@@ -122,6 +128,11 @@ public class Controller_Mp3Player implements Initializable {
 			songNumber--;
 			
 			mediaPlayer.stop();
+			
+			// you can use previous and next with a running or no-running song   
+			if (running) {
+				cancelTimer();
+			}
 			
 			//creating media and MediaPlayer objects
 			media = new Media(songs.get(songNumber).toURI().toString());
@@ -135,6 +146,11 @@ public class Controller_Mp3Player implements Initializable {
 			songNumber = songs.size() - 1;
 			
 			mediaPlayer.stop();
+			
+			// you can use previous and next with a running or no-running song   
+			if (running) {
+				cancelTimer();
+			}
 			
 			//creating media and MediaPlayer objects
 			media = new Media(songs.get(songNumber).toURI().toString());
@@ -154,6 +170,11 @@ public class Controller_Mp3Player implements Initializable {
 			
 			mediaPlayer.stop();
 			
+			// you can use previous and next with a running or no-running song   
+			if (running) {
+				cancelTimer();
+			}
+			
 			//creating media and MediaPlayer objects
 			media = new Media(songs.get(songNumber).toURI().toString());
 			mediaPlayer = new MediaPlayer(media);
@@ -166,6 +187,11 @@ public class Controller_Mp3Player implements Initializable {
 			songNumber = 0;
 			
 			mediaPlayer.stop();
+			
+			// you can use previous and next with a running or no-running song   
+			if (running) {
+				cancelTimer();
+			}
 			
 			//creating media and MediaPlayer objects
 			media = new Media(songs.get(songNumber).toURI().toString());
@@ -195,9 +221,30 @@ public class Controller_Mp3Player implements Initializable {
 	
 	public void beginTimer () {
 		
+		// we set the general Timer and the single timerTask
+		timer = new Timer();
+		task = new TimerTask() {
+			
+			@Override
+			public void run() {
+				running = true;
+				double current = mediaPlayer.getCurrentTime().toSeconds();
+				double end = media.getDuration().toSeconds();
+				songProgressBar.setProgress(current/end);
+				
+				if (current/end == 1) {
+					cancelTimer();
+				}
+			}
+		};
+		// a new task after 1000ms every 1000ms
+		timer.scheduleAtFixedRate(task, 1000, 1000);
+		
 	}
 	
 	public void cancelTimer () {
 		
+		running = false;
+		timer.cancel();
 	}
 }

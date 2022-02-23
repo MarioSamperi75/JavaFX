@@ -104,10 +104,12 @@ public class Controller_Mp3Player implements Initializable {
 		// we must set the execution speed before playing anyway
 		// even if we doesn't click in the  speedBox -maybe is already 200%...
 		// so even if the event is null
+		// the same for the volume
 		
 		// we start the timer!
 		beginTimer();
 		changeSpeed(null);
+		mediaPlayer.setVolume(volumeSlider.getValue() * 0.01);
 		mediaPlayer.play();
 	}
 	
@@ -239,7 +241,7 @@ public class Controller_Mp3Player implements Initializable {
 			}
 		};
 		// a new task after 1000ms every 1000ms
-		timer.scheduleAtFixedRate(task, 1000, 1000);
+		timer.scheduleAtFixedRate(task, 0, 1000);
 		
 	}
 	

@@ -84,8 +84,6 @@ public class Controller_Mp3Player implements Initializable {
 	}
 	
 	public void pauseMedia() {
-		// to avoid a bug when resetting and starting
-	
 		mediaPlayer.pause();
 		
 	}
@@ -95,11 +93,64 @@ public class Controller_Mp3Player implements Initializable {
 	}
 
 	public void previousMedia () {
+		// if not first song
+		if (songNumber > 0) {
+			songNumber--;
+			
+			mediaPlayer.stop();
+			
+			//creating media and MediaPlayer objects
+			media = new Media(songs.get(songNumber).toURI().toString());
+			mediaPlayer = new MediaPlayer(media);
+			
+			playMedia();
+			
+			songLabel.setText(songs.get(songNumber).getName());	
+		} else {
+			//if first song song let's start from the last one
+			songNumber = songs.size() - 1;
+			
+			mediaPlayer.stop();
+			
+			//creating media and MediaPlayer objects
+			media = new Media(songs.get(songNumber).toURI().toString());
+			mediaPlayer = new MediaPlayer(media);
+			
+			songLabel.setText(songs.get(songNumber).getName());		
+			
+			playMedia();
+		}
 		
 	}
 
 	public void nextMedia () {
-		
+		// if not last song
+		if (songNumber < songs.size() - 1) {
+			songNumber++;
+			
+			mediaPlayer.stop();
+			
+			//creating media and MediaPlayer objects
+			media = new Media(songs.get(songNumber).toURI().toString());
+			mediaPlayer = new MediaPlayer(media);
+			
+			playMedia();
+			
+			songLabel.setText(songs.get(songNumber).getName());	
+		} else {
+			//if last song let's start from 0
+			songNumber = 0;
+			
+			mediaPlayer.stop();
+			
+			//creating media and MediaPlayer objects
+			media = new Media(songs.get(songNumber).toURI().toString());
+			mediaPlayer = new MediaPlayer(media);
+			
+			songLabel.setText(songs.get(songNumber).getName());		
+			
+			playMedia();
+		}
 	}
 	
 	public void changeSpeed (ActionEvent event) {

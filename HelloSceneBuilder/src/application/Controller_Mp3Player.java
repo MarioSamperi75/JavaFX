@@ -45,7 +45,7 @@ public class Controller_Mp3Player implements Initializable {
 	private File[] files;
 	private ArrayList<File> songs;
 	private int songNumber;
-	private int[] speeds = {25, 50, 75, 100, 125, 150, 175, 200};
+	private int[] speeds = {25, 50, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 150, 175, 200};
 	
 	private Timer timer;
 	private TimerTask task;
@@ -76,10 +76,22 @@ public class Controller_Mp3Player implements Initializable {
 		//we set the name of the song in the songLabel
 		songLabel.setText(songs.get(songNumber).getName());
 		
+		//populate the speedBox with the array of speeds
+		for (int i = 0; i < speeds.length; i++) {
+			speedBox.getItems().add(Integer.toString(speeds[i]) + "%");
+		}
+		
+		// we set the onAction method to the speedBox and  onAction, we calls the method changeSpeed
+		speedBox.setOnAction(this::changeSpeed);
+		
 		
 	}
 	
 	public void playMedia() {
+		// we must set the execution speed before playing anyway
+		// even if we doesn't click in the  speedBox -maybe is already 200%...
+		// so even if the event is null
+		changeSpeed(null);
 		mediaPlayer.play();
 	}
 	
@@ -154,7 +166,19 @@ public class Controller_Mp3Player implements Initializable {
 	}
 	
 	public void changeSpeed (ActionEvent event) {
+		// taking from the box, parsing and setRate
+		// we avoid to get the "%" by getting a substring
 		
+		// if we use next or previous without changing rate, 
+		// we would send a null value into this set rate!! error!!
+		// so we have to check if is null, in this case we set 1 as default
+		
+		if (speedBox.getValue() == null) {
+			mediaPlayer.setRate(1);
+		}
+		else {
+		mediaPlayer.setRate(Integer.parseInt(speedBox.getValue().substring(0, speedBox.getValue().length()-1)) * 0.01);
+		}
 	}
 	
 	public void beginTimer () {

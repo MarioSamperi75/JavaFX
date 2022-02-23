@@ -92,9 +92,10 @@ public class Controller_Mp3Player implements Initializable {
 			public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
 				mediaPlayer.setVolume(volumeSlider.getValue() * 0.01);
 			}
-		
-		
 		});
+		
+		songProgressBar.setStyle("-fx-accent : #000000; -fx-border-color : #FFFF00");
+		
 		
 		
 	}

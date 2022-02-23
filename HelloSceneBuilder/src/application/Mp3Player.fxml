@@ -12,12 +12,12 @@
    <children>
       <AnchorPane fx:id="pane" layoutX="-9.0" prefHeight="140.0" prefWidth="555.0" style="-fx-background-color: BLACK;">
          <children>
-            <Label fx:id="songLabel" alignment="CENTER" layoutX="9.0" layoutY="1.0" prefHeight="75.0" prefWidth="546.0" style="-fx-background-color: BLACK;" text="MP3 Player" textFill="#ebef00">
+            <Label fx:id="songLabel" alignment="CENTER" layoutX="9.0" layoutY="1.0" prefHeight="83.0" prefWidth="546.0" style="-fx-background-color: BLACK;" text="MP3 Player" textFill="#ebef00">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <ProgressBar fx:id="songProgressBar" layoutX="12.0" layoutY="77.0" prefHeight="18.0" prefWidth="542.0" progress="0.0" />
+            <ProgressBar fx:id="songProgressBar" layoutX="12.0" layoutY="81.0" prefHeight="14.0" prefWidth="542.0" progress="0.0" />
             <Button fx:id="playButton" layoutX="12.0" layoutY="98.0" mnemonicParsing="false" onAction="#playMedia" prefHeight="38.0" prefWidth="76.0" text="PLAY">
                <font>
                   <Font size="16.0" />

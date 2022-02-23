@@ -7,7 +7,8 @@ import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
 
-
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -83,6 +84,17 @@ public class Controller_Mp3Player implements Initializable {
 		
 		// we set the onAction method to the speedBox and  onAction, we calls the method changeSpeed
 		speedBox.setOnAction(this::changeSpeed);
+		
+		// we add a listener with an anonymous function to set and change the volume
+		volumeSlider.valueProperty().addListener(new ChangeListener<Number>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+				mediaPlayer.setVolume(volumeSlider.getValue() * 0.01);
+			}
+		
+		
+		});
 		
 		
 	}
